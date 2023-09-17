@@ -1,13 +1,14 @@
 # Created by https://www.toptal.com/developers/gitignore/api/python
 # Edit at https://www.toptal.com/developers/gitignore?templates=python
 
-.vector
-.INV
-.bms
-.vtk
-.identifier
-.vec
-.vscode
+*.vector
+*.INV
+*.bms
+*.vtk
+*.identifier
+*.vec
+*.vscode
+*.html
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
