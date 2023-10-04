@@ -1,13 +1,12 @@
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.tree import export_text
 from sklearn.tree import plot_tree
 import matplotlib.pyplot as plt
 
 # Crear un DataFrame desde los datos proporcionados
 data = {
-    'x0': [4.3, 3.9, 2.7, 6.6, 6.5, 2.7],
-    'x1': [4.9, 6.1, 4.8, 4.4, 2.9, 6.7],
+    'x0': [4.3, 6.5, 2.7, 6.6, 6.5, 2.7],
+    'x1': [4.9, 4.1, 4.8, 4.4, 2.9, 6.7],
     'y': [0, 0, 0, 1, 1, 1]
 }
 df = pd.DataFrame(data)
@@ -22,13 +21,8 @@ clf = DecisionTreeClassifier()
 # Entrenar el modelo en los datos
 clf.fit(X, y)
 
-# Imprimir el árbol de decisión en formato de texto
-tree_rules = export_text(clf, feature_names=list(X.columns))
-print("Árbol de Decisión:")
-print(tree_rules)
-
-# Visualizar el árbol de decisión
+# Visualizar el árbol de decisión con solo la clase y las características 'x'
 plt.figure(figsize=(10, 6))
-plot_tree(clf, filled=True, feature_names=list(X.columns), class_names=['y=0', 'y=1'])
+plot_tree(clf, filled=True, feature_names=list(X.columns), class_names=['y=0', 'y=1'], impurity=False, fontsize=10)
 plt.title("Árbol de Decisión")
 plt.show()
