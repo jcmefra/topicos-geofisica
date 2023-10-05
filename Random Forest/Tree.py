@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 
 # Crear un DataFrame desde los datos proporcionados
 data = {
-    'x0': [4.3, 6.5, 2.7, 6.6, 6.5, 2.7],
-    'x1': [4.9, 4.1, 4.8, 4.4, 2.9, 6.7],
+    'x0': [4.3, 3.9, 2.7, 6.6, 6.5, 2.7],
+    'x1': [4.9, 6.1, 4.8, 4.4, 2.9, 6.7],
     'y': [0, 0, 0, 1, 1, 1]
 }
 df = pd.DataFrame(data)
@@ -23,6 +23,6 @@ clf.fit(X, y)
 
 # Visualizar el árbol de decisión con solo la clase y las características 'x'
 plt.figure(figsize=(10, 6))
-plot_tree(clf, filled=True, feature_names=list(X.columns), class_names=['y=0', 'y=1'], impurity=False, fontsize=10)
+plot_tree(clf, filled=True, feature_names=list(X.columns), class_names=['y=0', 'y=1'], impurity=True, fontsize=10)
 plt.title("Árbol de Decisión")
 plt.show()

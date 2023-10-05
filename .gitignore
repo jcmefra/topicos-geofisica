@@ -5,7 +5,7 @@
 *.INV
 *.bms
 *.vtk
-*.identifier
+*.Identifier
 *.vec
 *.vscode
 *.html
